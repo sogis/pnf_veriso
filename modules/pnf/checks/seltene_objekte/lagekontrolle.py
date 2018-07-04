@@ -86,6 +86,17 @@ class ComplexCheck(ComplexCheckBase):
             }
             vlayer = self.layer_loader.load(layer, True, True)  
 
+            layer = {
+                "type": "wms",
+                "title": _translate("VeriSO_PNF_Seltene_Objekte", "DTM Hangneigung",
+                                    None),
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.lidar_2014.hangneigung",
+                "format": "image/jpeg", 
+                "crs": "EPSG:" + str(epsg),
+                "group": group
+            }
+            vlayer = self.layer_loader.load(layer, False, True)
 
             layer = {
                 "type": "postgres",
