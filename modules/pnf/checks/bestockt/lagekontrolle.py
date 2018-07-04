@@ -67,8 +67,8 @@ class ComplexCheck(ComplexCheckBase):
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_bestockt", "Orthofoto CIR",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_orthofoto.wms",
-                "layers": "Ortho_CIR_SO",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.orthofoto.cir",
                 "format": "image/jpeg", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
@@ -79,19 +79,32 @@ class ComplexCheck(ComplexCheckBase):
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_bestockt", "Orthofoto RGB",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_orthofoto.wms",
-                "layers": "Ortho_SO",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.orthofoto_rgb",
                 "format": "image/jpeg", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
 
             vlayer = self.layer_loader.load(layer, True, True)
+
+            layer = {
+                "type": "wms",
+                "title": _translate("VeriSO_PNF_bestockt", "DTM Hangneigung",
+                                    None),
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.lidar_2014.hangneigung",
+                "format": "image/jpeg", 
+                "crs": "EPSG:" + str(epsg),
+                "group": group
+            }
+            vlayer = self.layer_loader.load(layer, False, True)
+
             layer = {
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_bestockt", "DOM",
                                     None),
-                "url": "http://geoweb.so.ch/wms/wms_lidar",
-                "layers": "dom_relief_2014",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.lidar_2014.dom_relief",
                 "format": "image/jpeg", 
                 "crs": "EPSG:" + str(epsg),
                 "group": group
@@ -103,7 +116,7 @@ class ComplexCheck(ComplexCheckBase):
                 "title": _translate("VeriSO_PNF_bestockt", "DTM",
                                     None),
                 "url": "http://geoweb.so.ch/wms/wms_lidar",
-                "layers": "dtm_relief_2014",
+                "layers": "ch.so.agi.lidar_2014.dtm_relief",
                 "format": "image/jpeg", 
                 "crs": "EPSG:" + str(epsg),
                 "group": group

@@ -67,8 +67,8 @@ class ComplexCheck(ComplexCheckBase):
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_Strasse", "Orthofoto CIR",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_orthofoto.wms",
-                "layers": "Ortho_CIR_SO",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.orthofoto.cir",
                 "format": "image/jpeg", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
@@ -79,8 +79,8 @@ class ComplexCheck(ComplexCheckBase):
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_Strasse", "Orthofoto RGB",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_orthofoto.wms",
-                "layers": "Ortho_SO",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.orthofoto_rgb",
                 "format": "image/jpeg", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
@@ -89,10 +89,10 @@ class ComplexCheck(ComplexCheckBase):
             
             layer = {
                 "type": "wms",
-                "title": _translate("VeriSO_PNF_Strasse", "DTM",
+                "title": _translate("VeriSO_PNF_Strasse", "DTM Hangneigung",
                                     None),
-                "url": "http://geoweb.so.ch/wms/wms_lidar",
-                "layers": "dtm_hangneigung_2014",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.lidar_2014.hangneigung",
                 "format": "image/jpeg", 
                 "crs": "EPSG:" + str(epsg),
                 "group": group
@@ -103,8 +103,8 @@ class ComplexCheck(ComplexCheckBase):
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_Strasse", "Wanderwege",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_wander.wms",
-                "layers": "wweg",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.arp.wanderwege",
                 "format": "image/png", 
                 "crs": "EPSG:" + str(epsg),
                 "group": group

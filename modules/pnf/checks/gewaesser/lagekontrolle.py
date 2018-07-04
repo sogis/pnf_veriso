@@ -67,8 +67,8 @@ class ComplexCheck(ComplexCheckBase):
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_Gewaesser", "Orthofoto CIR",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_orthofoto.wms",
-                "layers": "Ortho_CIR_SO",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.orthofoto.cir",
                 "format": "image/jpeg", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
@@ -79,20 +79,33 @@ class ComplexCheck(ComplexCheckBase):
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_Gewaesser", "Orthofoto RGB",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_orthofoto.wms",
-                "layers": "Ortho_SO",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.orthofoto_rgb",
                 "format": "image/jpeg", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
 
             vlayer = self.layer_loader.load(layer, True, True)
             
+
+            layer = {
+                "type": "wms",
+                "title": _translate("VeriSO_PNF_Gewaesser", "DTM Hangneigung",
+                                    None),
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.lidar_2014.hangneigung",
+                "format": "image/jpeg", 
+                "crs": "EPSG:" + str(epsg),
+                "group": group
+            }
+            vlayer = self.layer_loader.load(layer, False, True)
+
             layer = {
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_Gewaesser", "DTM",
                                     None),
-                "url": "http://geoweb.so.ch/wms/wms_lidar",
-                "layers": "dtm_hangneigung_2014",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.lidar_2014.dtm",
                 "format": "image/jpeg", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
@@ -101,10 +114,10 @@ class ComplexCheck(ComplexCheckBase):
             
             layer = {
                 "type": "wms",
-                "title": _translate("VeriSO_PNF_Gewaesser", "GEWISSO",
+                "title": _translate("VeriSO_PNF_Gewaesser", "Gewässer",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_gewaesser.wms",
-                "layers": "gewaesser",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.afu.fliessgewaesser.netz",
                 "format": "image/png", 
                 "crs": "EPSG:" + str(epsg),
                 "group": group,

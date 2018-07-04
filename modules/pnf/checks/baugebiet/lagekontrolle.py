@@ -67,8 +67,8 @@ class ComplexCheck(ComplexCheckBase):
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_Baugebiet", "Orthofoto CIR",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_orthofoto.wms",
-                "layers": "Ortho_CIR_SO",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.orthofoto.cir",
                 "format": "image/png", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
@@ -79,20 +79,32 @@ class ComplexCheck(ComplexCheckBase):
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_Baugebiet", "Orthofoto RGB",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_orthofoto.wms",
-                "layers": "Ortho_SO",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.orthofoto_rgb",
                 "format": "image/png", "crs": "EPSG:" + str(epsg),
                 "group": group
             }
 
             vlayer = self.layer_loader.load(layer, True, True)
+
+            layer = {
+                "type": "wms",
+                "title": _translate("VeriSO_PNF_Baugebiet", "DTM Hangneigung",
+                                    None),
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.agi.lidar_2014.hangneigung",
+                "format": "image/jpeg", 
+                "crs": "EPSG:" + str(epsg),
+                "group": group
+            }
+            vlayer = self.layer_loader.load(layer, False, True)
             
             layer = {
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_Baugebiet", "GEWISSO",
                                     None),
-                "url": "http://geoweb.so.ch/wms/sogis_gewaesser.wms",
-                "layers": "gewaesser",
+                "url": "https://geo.so.ch/wms?",
+                "layers": "ch.so.afu.fliessgewaesser.netz",
                 "format": "image/png", 
                 "crs": "EPSG:" + str(epsg),
                 "group": group
