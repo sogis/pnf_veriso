@@ -28,7 +28,7 @@ baselayer:
   format: image/jpeg
 - type: wms
   title: Hintergrundkarte schwarz-weiss
-  url: https://geoweb.so.ch/wms?
+  url: https://geo.so.ch/wms?
   layers: ch.so.agi.hintergrundkarte_sw
   format: image/jpeg
 - type: wms

@@ -115,7 +115,7 @@ class ComplexCheck(ComplexCheckBase):
                 "type": "wms",
                 "title": _translate("VeriSO_PNF_bestockt", "DTM",
                                     None),
-                "url": "http://geoweb.so.ch/wms/wms_lidar",
+                "url": "https://geo.so.ch/wms?",
                 "layers": "ch.so.agi.lidar_2014.dtm_relief",
                 "format": "image/jpeg", 
                 "crs": "EPSG:" + str(epsg),

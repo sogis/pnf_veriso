@@ -101,7 +101,7 @@ class ComplexCheck(ComplexCheckBase):
             
             layer = {
                 "type": "wms",
-                "title": _translate("VeriSO_PNF_Baugebiet", "GEWISSO",
+                "title": _translate("VeriSO_PNF_Baugebiet", "Gewässer",
                                     None),
                 "url": "https://geo.so.ch/wms?",
                 "layers": "ch.so.afu.fliessgewaesser.netz",
